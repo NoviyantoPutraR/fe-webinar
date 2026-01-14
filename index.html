@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pendaftaran Webinar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="card card-image">
+      <img 
+        src="https://images.unsplash.com/photo-1602934585418-f588bea4215c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+        alt="Webinar Series Kerjabaik" 
+        class="webinar-image"
+      />
+    </div>
+    
+    <div class="card card-header-content">
+      <div class="text-left">
+        <h1>WEBINAR SERIES KERJABAIK: AI AND HUMAN IN HARMONY</h1>
+        <p class="header-description">Webinar Series ini merupakan bagian dari komitmen <b>Kerjabaik.Ai</b> untuk membersamai pembangunan daerah melalui edukasi dan berbagi pengalaman tentang proses bisnis pemerintahan daerah.</p>
+        <div class="header-info">
+          <p><b>Tanggal:</b> <span id="webinar-tanggal">Memuat...</span></p>
+          <p><b>Waktu:</b> <span id="webinar-waktu">Memuat...</span></p>
+          <p><b>Format:</b> Webinar Zoom (link dikirim setelah pendaftaran)</p><br>
+          <p><b>Kontak pendaftaran:</b> 0819  6011  777  (Narahubung Kerjabaik.Ai)</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <form id="form-daftar">
+        <div class="form-group">
+          <label for="nama" class="form-label required">Nama Lengkap</label>
+          <input type="text" id="nama" name="nama" class="form-input" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="form-label required">Email</label>
+          <input type="email" id="email" name="email" class="form-input" required />
+        </div>
+
+        <div class="form-group">
+          <label for="kota-search" class="form-label required">Asal Daerah</label>
+          <div class="kota-search-wrapper">
+            <input 
+              type="text" 
+              id="kota-search" 
+              class="kota-search-input form-input" 
+              placeholder="Cari Asal Daerah..." 
+              autocomplete="off"
+              required
+            />
+            <div class="kota-dropdown" id="kota-dropdown"></div>
+            <select id="kota" name="kota" class="form-select" style="display: none;">
+              <option value="">Memuat...</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="institusi" class="form-label required">Asal Instansi Perangkat Daerah</label>
+          <input type="text" id="institusi" name="institusi" class="form-input" required/>
+        </div>
+
+        <div class="form-group">
+          <label for="jabatan" class="form-label required">Posisi / Jabatan</label>
+          <input type="text" id="jabatan" name="jabatan" class="form-input" required/>
+        </div>
+
+        <div class="form-group">
+          <label for="kontak" class="form-label required">Kontak Whatsapp</label>
+          <input type="tel" id="kontak" name="kontak" class="form-input" placeholder="Nomor WhatsApp" required/>
+        </div>
+
+        
+
+        <div class="form-group">
+          <label for="usulan" class="form-label required">Usulan Topik Webinar berkaitan dengan Akal Imitasi (AI)</label>
+          <textarea id="usulan" name="usulan" class="form-textarea" placeholder="Masukkan usulan Anda..." rows="4" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Bersedia dikontak Tim Kerjabaik.ai setelah webinar selesai</label>
+          <div class="space-y-3">
+            <div class="radio-group">
+              <input type="radio" id="dikontak-ya" name="dikontak" value="Iya, dengan senang hati" class="form-radio" />
+              <label for="dikontak-ya" class="radio-label">Iya, dengan senang hati</label>
+            </div>
+            <div class="radio-group">
+              <input type="radio" id="dikontak-tidak" name="dikontak" value="Tidak perlu" class="form-radio" />
+              <label for="dikontak-tidak" class="radio-label">Tidak perlu</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="checkbox-group">
+            <input type="checkbox" id="setuju" name="setuju" class="form-checkbox" required />
+            <label for="setuju" class="checkbox-label">
+              Saya setuju dengan <a href="#" class="text-orange-600">syarat dan ketentuan</a> yang berlaku
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" id="submit-btn" class="btn btn-primary" style="width: 100%;">
+            <span class="btn-text">Daftar</span>
+          </button>
+        </div>
+      </form>
+
+      <div id="pesan" class="message"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
