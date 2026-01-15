@@ -7,25 +7,7 @@
    FONT IMPORTS
    ============================================ */
 
-   @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap');
-
-   /* Brockmann Font */
-   @font-face {
-     font-family: 'Brockmann';
-     src: url('https://kerjabaik.ai/brockmann-medium-webfont.ttf') format('truetype'),
-          url('https://kerjabaik.ai/brockmann-medium.otf') format('opentype');
-     font-weight: 500;
-     font-style: normal;
-     font-display: swap;
-   }
-   
-   /* Fallback jika font tidak tersedia */
-   @font-face {
-     font-family: 'Brockmann';
-     src: local('Georgia'), local('Times New Roman');
-     font-weight: 500;
-     font-style: normal;
-   }
+   /* Roboto Mono font is loaded via link tag in index.html */
    
    /* ============================================
       CSS VARIABLES - DESIGN TOKENS
@@ -159,7 +141,7 @@
    }
    
    body {
-     font-family: 'Plus Jakarta Sans', sans-serif;
+     font-family: "Roboto Mono", monospace;
      font-size: var(--font-size-base);
      line-height: var(--line-height-relaxed);
      color: var(--color-gray-900);
@@ -191,7 +173,7 @@
       ============================================ */
    
    h1, h2, h3, h4, h5, h6 {
-     font-family: 'Brockmann', serif;
+     font-family: "Roboto Mono", monospace;
      font-weight: 500;
      color: var(--color-gray-900);
      line-height: var(--line-height-tight);
@@ -471,7 +453,7 @@
      font-weight: 600;
      color: var(--color-gray-900);
      margin-bottom: var(--spacing-2);
-     font-family: 'Plus Jakarta Sans', sans-serif;
+     font-family: "Roboto Mono", monospace;
    }
    
    @media (min-width: 640px) {
@@ -497,7 +479,7 @@
      width: 100%;
      padding: var(--spacing-3) var(--spacing-3);
      font-size: var(--font-size-sm);
-     font-family: 'Plus Jakarta Sans', sans-serif;
+     font-family: "Roboto Mono", monospace;
      line-height: var(--line-height-normal);
      color: var(--color-gray-900);
      background-color: hsl(var(--color-background));
@@ -753,7 +735,7 @@
      padding: var(--spacing-3) var(--spacing-5);
      font-size: var(--font-size-sm);
      font-weight: 500;
-     font-family: 'Plus Jakarta Sans', sans-serif;
+     font-family: "Roboto Mono", monospace;
      line-height: var(--line-height-normal);
      border: none;
      border-radius: var(--radius-md);
@@ -924,7 +906,7 @@
    .kota-dropdown-item {
      padding: var(--spacing-3) var(--spacing-4);
      font-size: var(--font-size-base);
-     font-family: 'Plus Jakarta Sans', sans-serif;
+     font-family: "Roboto Mono", monospace;
      color: var(--color-gray-900);
      cursor: pointer;
      transition: background-color var(--transition-fast);
@@ -1030,8 +1012,8 @@
     flex-shrink: 0;
   }
   
-  .modal-title {
-    font-family: 'Brockmann', serif;
+   .modal-title {
+     font-family: "Roboto Mono", monospace;
     font-size: var(--font-size-2xl);
     font-weight: 500;
     color: var(--color-gray-900);
@@ -1105,8 +1087,8 @@
     line-height: var(--line-height-relaxed);
   }
   
-  .modal-content h3 {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+   .modal-content h3 {
+     font-family: "Roboto Mono", monospace;
     font-size: var(--font-size-lg);
     font-weight: 600;
     color: var(--color-gray-900);
