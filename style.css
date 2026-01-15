@@ -723,6 +723,26 @@
      }
    }
    
+   /* Ukuran lebih kecil untuk label radio dikontak */
+   label[for="dikontak-ya"],
+   label[for="dikontak-tidak"] {
+     font-size: var(--font-size-xs);
+   }
+   
+   @media (min-width: 640px) {
+     label[for="dikontak-ya"],
+     label[for="dikontak-tidak"] {
+       font-size: var(--font-size-sm);
+     }
+   }
+   
+   @media (min-width: 768px) {
+     label[for="dikontak-ya"],
+     label[for="dikontak-tidak"] {
+       font-size: var(--font-size-sm);
+     }
+   }
+   
    /* ============================================
       BUTTONS
       ============================================ */
@@ -1223,6 +1243,6 @@
   
     .modal-title {
       font-size: var(--font-size-xl);
-    }
-  }
+     }
+     }
    
