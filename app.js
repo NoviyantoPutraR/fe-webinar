@@ -5,6 +5,7 @@ const pesan = document.getElementById('pesan');
 const hiddenSelectKota = document.getElementById('kota'); // Renamed to avoid conflict
 const submitBtn = document.getElementById('submit-btn');
 const btnText = submitBtn.querySelector('.btn-text');
+const kontakInput = document.getElementById('kontak');
 
 // Searchable dropdown elements
 const kotaSearchInput = document.getElementById('kota-search');
@@ -456,3 +457,30 @@ document.addEventListener('keydown', (e) => {
     closeModal();
   }
 });
+
+/* ==========================
+   INPUT VALIDATION - KONTAK (ANGKA SAJA)
+========================== */
+if (kontakInput) {
+  // Prevent non-numeric input
+  kontakInput.addEventListener('input', (e) => {
+    // Remove all non-numeric characters
+    e.target.value = e.target.value.replace(/\D/g, '');
+  });
+
+  // Prevent paste non-numeric content
+  kontakInput.addEventListener('paste', (e) => {
+    e.preventDefault();
+    const paste = (e.clipboardData || window.clipboardData).getData('text');
+    const numericOnly = paste.replace(/\D/g, '');
+    e.target.value = numericOnly;
+  });
+
+  // Prevent non-numeric keypress
+  kontakInput.addEventListener('keypress', (e) => {
+    const char = String.fromCharCode(e.which);
+    if (!/[0-9]/.test(char)) {
+      e.preventDefault();
+    }
+  });
+}
