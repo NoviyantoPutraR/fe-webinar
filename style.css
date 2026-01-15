@@ -974,4 +974,239 @@
        max-height: 250px;
      }
      }
+  
+  /* ============================================
+     MODAL - SYARAT DAN KETENTUAN
+     ============================================ */
+  
+  .modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-base), visibility var(--transition-base);
+  }
+  
+  .modal-backdrop.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .modal-container {
+    background-color: hsl(var(--color-background));
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    width: 100%;
+    max-width: 42rem;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(20px) scale(0.95);
+    transition: transform var(--transition-base);
+    overflow: hidden;
+  }
+  
+  .modal-backdrop.show .modal-container {
+    transform: translateY(0) scale(1);
+  }
+  
+  .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-6);
+    border-bottom: 1px solid hsl(var(--color-border));
+    flex-shrink: 0;
+  }
+  
+  .modal-title {
+    font-family: 'Brockmann', serif;
+    font-size: var(--font-size-2xl);
+    font-weight: 500;
+    color: var(--color-gray-900);
+    margin: 0;
+    line-height: var(--line-height-tight);
+  }
+  
+  @media (min-width: 640px) {
+    .modal-title {
+      font-size: var(--font-size-3xl);
+    }
+  }
+  
+  .modal-close-btn {
+    background: none;
+    border: none;
+    padding: var(--spacing-2);
+    cursor: pointer;
+    color: var(--color-gray-500);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+    line-height: 1;
+    min-width: 2rem;
+    min-height: 2rem;
+  }
+  
+  .modal-close-btn:hover {
+    background-color: var(--color-gray-100);
+    color: var(--color-gray-900);
+  }
+  
+  .modal-close-btn:focus {
+    outline: 2px solid hsl(var(--color-ring));
+    outline-offset: 2px;
+  }
+  
+  .modal-close-btn svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  
+  .modal-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--spacing-6);
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .modal-body::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .modal-body::-webkit-scrollbar-track {
+    background: var(--color-gray-100);
+  }
+  
+  .modal-body::-webkit-scrollbar-thumb {
+    background: var(--color-gray-300);
+    border-radius: var(--radius-full);
+  }
+  
+  .modal-body::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gray-400);
+  }
+  
+  .modal-content {
+    color: var(--color-gray-700);
+    line-height: var(--line-height-relaxed);
+  }
+  
+  .modal-content h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-gray-900);
+    margin-top: var(--spacing-6);
+    margin-bottom: var(--spacing-3);
+    line-height: var(--line-height-snug);
+  }
+  
+  .modal-content h3:first-child {
+    margin-top: 0;
+  }
+  
+  .modal-content p {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-gray-600);
+    margin-bottom: var(--spacing-4);
+  }
+  
+  @media (min-width: 640px) {
+    .modal-content p {
+      font-size: var(--font-size-base);
+    }
+  }
+  
+  .modal-content ul {
+    margin-left: var(--spacing-5);
+    margin-bottom: var(--spacing-4);
+    padding-left: var(--spacing-2);
+  }
+  
+  .modal-content li {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-gray-600);
+    margin-bottom: var(--spacing-2);
+  }
+  
+  @media (min-width: 640px) {
+    .modal-content li {
+      font-size: var(--font-size-base);
+    }
+  }
+  
+  .modal-content strong {
+    font-weight: 600;
+    color: var(--color-gray-900);
+  }
+  
+  .modal-footer-note {
+    margin-top: var(--spacing-6);
+    padding-top: var(--spacing-4);
+    border-top: 1px solid hsl(var(--color-border));
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--color-gray-700);
+    font-style: italic;
+  }
+  
+  .modal-footer {
+    padding: var(--spacing-6);
+    border-top: 1px solid hsl(var(--color-border));
+    display: flex;
+    justify-content: flex-end;
+    flex-shrink: 0;
+  }
+  
+  .modal-close-btn-footer {
+    min-width: 120px;
+  }
+  
+  /* Prevent body scroll when modal is open */
+  body.modal-open {
+    overflow: hidden;
+  }
+  
+  @media (max-width: 640px) {
+    .modal-backdrop {
+      padding: var(--spacing-2);
+    }
+  
+    .modal-container {
+      max-height: 95vh;
+      border-radius: var(--radius-lg);
+    }
+  
+    .modal-header {
+      padding: var(--spacing-4);
+    }
+  
+    .modal-body {
+      padding: var(--spacing-4);
+    }
+  
+    .modal-footer {
+      padding: var(--spacing-4);
+    }
+  
+    .modal-title {
+      font-size: var(--font-size-xl);
+    }
+  }
    

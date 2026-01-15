@@ -393,3 +393,66 @@ form.addEventListener('submit', e => {
       console.error(err);
     });
 });
+
+/* ==========================
+   MODAL - SYARAT DAN KETENTUAN
+========================== */
+const modal = document.getElementById('modal-syarat-ketentuan');
+const linkSyaratKetentuan = document.getElementById('link-syarat-ketentuan');
+const modalCloseBtns = document.querySelectorAll('.modal-close-btn, .modal-close-btn-footer');
+
+function openModal() {
+  if (!modal) return;
+  
+  modal.classList.add('show');
+  document.body.classList.add('modal-open');
+  
+  // Focus trap - focus on close button
+  const firstCloseBtn = modal.querySelector('.modal-close-btn');
+  if (firstCloseBtn) {
+    setTimeout(() => firstCloseBtn.focus(), 100);
+  }
+}
+
+function closeModal() {
+  if (!modal) return;
+  
+  modal.classList.remove('show');
+  document.body.classList.remove('modal-open');
+  
+  // Return focus to the link that opened the modal
+  if (linkSyaratKetentuan) {
+    linkSyaratKetentuan.focus();
+  }
+}
+
+// Open modal when link is clicked
+if (linkSyaratKetentuan) {
+  linkSyaratKetentuan.addEventListener('click', (e) => {
+    e.preventDefault();
+    openModal();
+  });
+}
+
+// Close modal when close buttons are clicked
+modalCloseBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    closeModal();
+  });
+});
+
+// Close modal when clicking on backdrop
+if (modal) {
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+}
+
+// Close modal with ESC key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modal && modal.classList.contains('show')) {
+    closeModal();
+  }
+});
