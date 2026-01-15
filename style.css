@@ -1087,8 +1087,8 @@
     line-height: var(--line-height-relaxed);
   }
   
-   .modal-content h3 {
-     font-family: "Roboto Mono", monospace;
+  .modal-content h3 {
+    font-family: "Roboto Mono", monospace;
     font-size: var(--font-size-lg);
     font-weight: 600;
     color: var(--color-gray-900);
@@ -1099,6 +1099,40 @@
   
   .modal-content h3:first-child {
     margin-top: 0;
+  }
+  
+  .modal-term-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-3);
+    margin-top: var(--spacing-5);
+  }
+  
+  .modal-term-item:first-of-type {
+    margin-top: var(--spacing-4);
+  }
+  
+  .modal-term-number {
+    font-family: "Roboto Mono", monospace;
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-gray-900);
+    flex-shrink: 0;
+    line-height: var(--line-height-relaxed);
+  }
+  
+  .modal-term-item p {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-gray-600);
+    margin: 0;
+    flex: 1;
+  }
+  
+  @media (min-width: 640px) {
+    .modal-term-item p {
+      font-size: var(--font-size-base);
+    }
   }
   
   .modal-content p {
